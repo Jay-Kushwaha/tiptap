@@ -24,7 +24,7 @@ const Tiptap = ({onEditorContentSave}) => {
   }
     return (
     <div className='m-8'>
-      <div className='w-full flex flex-wrap bg-gray-700 p-3 gap-3 text-white'>
+      <div className='w-full flex flex-wrap bg-gray-700 p-3 gap-1 text-white rounded-t-lg'>
         <button onClick={()=>editor.chain().focus().toggleBold().run()} 
         disabled={!editor.can().chain().focus().toggleBold().run()} 
         className={editor.isActive("bold")? "is-active":''}><strong>B</strong>
@@ -116,7 +116,7 @@ const Tiptap = ({onEditorContentSave}) => {
         <EditorContent editor={editor} className='max-h-96 overflow-y-scroll'/>
       </div>
       <button onClick={handleEditorContent}
-      className='bg-teal-400 px-2 py-1 rounded-md mt-5'>Save</button>
+      className='bg-teal-400 px-4 py-2 rounded-md mt-5'>Save</button>
     </div>
   )
 }

@@ -5,8 +5,10 @@ import ShowPost from "./ShowPost";
 const NewPost = () => {
     const[htmlContent, setHtmlContent] = useState('');
     const handleEditorContentSave =(html)=>{
-   
+          
         setHtmlContent(html);
+
+        // call the api form here for backend use
     }
     return (
       <div>
