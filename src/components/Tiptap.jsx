@@ -10,7 +10,7 @@ const extensions = [
 
 const content = ``
 
-const Tiptap = ({onEditorContentSave}) => {
+const Tiptap = ({onEditorContentSave}) => { 
   const editor = useEditor ({
     extensions,
     content
@@ -23,8 +23,8 @@ const Tiptap = ({onEditorContentSave}) => {
     onEditorContentSave(html) 
   }
     return (
-    <div>
-      <div>
+    <div className='m-8'>
+      <div className='w-full flex flex-wrap bg-gray-700 p3 gap-3 text-white'>
         <button onClick={()=>editor.chain().focus().toggleBold().run()} 
         disabled={!editor.can().chain().focus().toggleBold().run()} 
         className={editor.isActive("bold")? "is-active":''}><strong>B</strong>
@@ -112,10 +112,11 @@ const Tiptap = ({onEditorContentSave}) => {
           Redo
         </button>
       </div>
-      <div>
-        <EditorContent editor={editor}/>
+      <div className='border border-gray-500 border-top-1'>
+        <EditorContent editor={editor} className='max-h-96 overflow-y-scroll'/>
       </div>
-      <button onClick={handleEditorContent}>Save</button>
+      <button onClick={handleEditorContent}
+      className='bg-teal-400 px-2 py-1 rounded-md mt-5'>Save</button>
     </div>
   )
 }
