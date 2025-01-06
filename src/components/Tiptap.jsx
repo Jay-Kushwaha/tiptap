@@ -24,7 +24,7 @@ const Tiptap = ({onEditorContentSave}) => {
   }
     return (
     <div className='m-8'>
-      <div className='w-full flex flex-wrap bg-gray-700 p3 gap-3 text-white'>
+      <div className='w-full flex flex-wrap bg-gray-700 p-3 gap-3 text-white'>
         <button onClick={()=>editor.chain().focus().toggleBold().run()} 
         disabled={!editor.can().chain().focus().toggleBold().run()} 
         className={editor.isActive("bold")? "is-active":''}><strong>B</strong>
